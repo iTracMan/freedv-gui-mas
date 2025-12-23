@@ -693,7 +693,7 @@ TopFrame::TopFrame(wxWindow* parent, wxWindowID id, const wxString& title, const
     rightSizer->Add(txLevelSizer, 0, wxALL | wxEXPAND, 2);
     
     // Mic/Speaker Level slider
-    wxStaticBox* micSpeakerBox = new wxStaticBox(m_panel, wxID_ANY, _("Mic/Spkr &Level"), wxDefaultPosition, wxSize(100,-1));
+    wxStaticBox* micSpeakerBox = new wxStaticBox(m_panel, wxID_ANY, _("MAS/Spkr &Level"), wxDefaultPosition, wxSize(100,-1));
     wxBoxSizer* micSpeakerLevelSizer = new wxStaticBoxSizer(micSpeakerBox, wxVERTICAL);
     
     // Sliders are integer values, so we're multiplying min/max by 10 here to allow 1 decimal precision.
