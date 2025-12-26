@@ -21,6 +21,7 @@
 //==========================================================================
 
 #include <wx/regex.h>
+#include <wx/msgdlg.h>
 #include <wx/wrapsizer.h>
 #include <wx/aui/tabmdi.h>
 #include <wx/numformatter.h>
@@ -534,18 +535,19 @@ TopFrame::TopFrame(wxWindow* parent, wxWindowID id, const wxString& title, const
     
     m_gt2 = new wxButton(GT2Box, wxID_ANY, _("GridTracker2"), wxDefaultPosition, wxDefaultSize, 0);
     m_gt2->SetToolTip(_("Start-up GridTracker2 Application"));
-    m_gt2->Bind(wxEVT_BUTTON, &TopFrame::OnLaunchGT2, this);
-{
-    void TopFrame::OnLaunchGT2(wxCommandEvent& event)}
+    m_gt2->Bind(wxEVT_BUTTON, &TopFrame::OnLaunchGT2, this);{
+}
+    void TopFrame::OnLaunchGT2(wxCommandEvent& event){
     
     // Use the full path to the GridTracker2 executable
     // Common paths: "/usr/bin/GridTracker2" or "~/GridTracker/GridTracker"
-{    wxString command = "~/GridTracker2/gridtracker2"; 
+    wxString command = "~/GridTracker2/gridtracker2"; 
 
     // wxEXEC_ASYNC allows your main app to keep running while GT2 starts
-    if (wxExecute(command, wxEXEC_ASYNC) == 0) }
+    if (wxExecute(command, wxEXEC_ASYNC) == 0) {
         wxMessageBox("Could not find or launch GridTracker2. Please check the path.", "Error");
-
+    }
+}
     sbSizerGridTracker2->Add(m_gt2, 0, wxALL | wxALIGN_CENTER_HORIZONTAL, 5);
     
     leftSizer->Add(sbSizerGridTracker2, 0, wxALL|wxEXPAND, 2);
