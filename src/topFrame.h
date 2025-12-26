@@ -133,7 +133,7 @@ class TopFrame : public wxFrame
         wxToggleButton      *m_audioRecord;
         
         wxButton*     m_logQSO;
-        wxButton*     m_GT2;
+        wxButton*     m_gt2;
 
         wxRadioButton *m_rbRADE;
         wxRadioButton *m_rb700d;
