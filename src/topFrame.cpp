@@ -545,7 +545,6 @@ TopFrame::TopFrame(wxWindow* parent, wxWindowID id, const wxString& title, const
     // wxEXEC_ASYNC allows your main app to keep running while GT2 starts
     if (wxExecute(command, wxEXEC_ASYNC) == 0) {
         wxMessageBox("Could not find or launch GridTracker2. Please check the path.", "Error");
-    }
 }    
     sbSizerGridTracker2->Add(m_gt2, 0, wxALL | wxALIGN_CENTER_HORIZONTAL, 5);
     
