@@ -527,6 +527,19 @@ TopFrame::TopFrame(wxWindow* parent, wxWindowID id, const wxString& title, const
     leftSizer->Add(sbSizerLogging, 0, wxALL|wxEXPAND, 2);
     
     //------------------------------
+    // Run GridTracker2
+    //------------------------------
+    wxStaticBox* GT2Box = new wxStaticBox(m_panel, wxID_ANY, _("GridTracker2"), wxDefaultPosition, wxSize(100,-1));
+    wxStaticBoxSizer* sbSizerGridTracker2 = new wxStaticBoxSizer(logBox, wxVERTICAL);
+    
+    m_gt2 = new wxButton(logBox, wxID_ANY, _("Log QSO"), wxDefaultPosition, wxDefaultSize, 0);
+    m_gt2->SetToolTip(_("Start-up GridTracker2 Application"));
+    m_gt2->Disable();
+    sbSizerGridTracker2->Add(m_logQSO, 0, wxALL | wxALIGN_CENTER_HORIZONTAL, 5);
+    
+    leftSizer->Add(sbSizerGridTracker2, 0, wxALL|wxEXPAND, 2);
+    
+    //------------------------------
     // BER Frames box
     //------------------------------
 
