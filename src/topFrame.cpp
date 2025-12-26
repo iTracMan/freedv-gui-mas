@@ -540,7 +540,7 @@ TopFrame::TopFrame(wxWindow* parent, wxWindowID id, const wxString& title, const
 {
     // Use the full path to the GridTracker2 executable
     // Common paths: "/usr/bin/GridTracker2" or "~/GridTracker/GridTracker"
-    wxString command = "/opt/GridTracker2/gridtracker2"; 
+    wxString command = "~/GridTracker2/gridtracker2"; 
 
     // wxEXEC_ASYNC allows your main app to keep running while GT2 starts
     if (wxExecute(command, wxEXEC_ASYNC) == 0) {
