@@ -530,28 +530,34 @@ TopFrame::TopFrame(wxWindow* parent, wxWindowID id, const wxString& title, const
     //------------------------------
     // Run GridTracker2
     //------------------------------
-    wxStaticBox* GT2Box = new wxStaticBox(m_panel, wxID_ANY, _("GridTracker2"), wxDefaultPosition, wxSize(100,-1));
-    wxStaticBoxSizer* sbSizerGridTracker2 = new wxStaticBoxSizer(GT2Box, wxVERTICAL);
-    
-    m_gt2 = new wxButton(GT2Box, wxID_ANY, _("GridTracker2"), wxDefaultPosition, wxDefaultSize, 0);
-    m_gt2->SetToolTip(_("Start-up GridTracker2 Application"));    
+/* --- Inside the TopFrame Constructor --- */
+wxStaticBox* GT2Box = new wxStaticBox(m_panel, wxID_ANY, _("GridTracker2"), wxDefaultPosition, wxSize(100,-1));
+wxStaticBoxSizer* sbSizerGridTracker2 = new wxStaticBoxSizer(GT2Box, wxVERTICAL);
+
+m_gt2 = new wxButton(GT2Box, wxID_ANY, _("GridTracker2"), wxDefaultPosition, wxDefaultSize, 0);
+m_gt2->SetToolTip(_("Start-up GridTracker2 Application"));    
+
+// Bind the button to the event handler
+m_gt2->Bind(wxEVT_BUTTON, &TopFrame::OnLaunchGT2, this);
+
+sbSizerGridTracker2->Add(m_gt2, 0, wxALL | wxALIGN_CENTER_HORIZONTAL, 5);
+leftSizer->Add(sbSizerGridTracker2, 0, wxALL|wxEXPAND, 2);
+
+// IMPORTANT: You must have a closing brace here to end the Constructor 
+// or the function that contains the UI layout code above.
+} 
+
+/* --- Outside the Constructor (Global Scope) --- */
+
+void TopFrame::OnLaunchGT2(wxCommandEvent& event)
 {
-    m_gt2->Bind(wxEVT_BUTTON, &TopFrame::OnLaunchGT2, this);
-}
-    void TopFrame::OnLaunchGT2(wxCommandEvent& event){
-    
     // Use the full path to the GridTracker2 executable
-    // Common paths: "/usr/bin/GridTracker2" or "~/GridTracker/GridTracker"
     wxString command = "~/GridTracker2/gridtracker2"; 
 
     // wxEXEC_ASYNC allows your main app to keep running while GT2 starts
     if (wxExecute(command, wxEXEC_ASYNC) == 0) {
         wxMessageBox("Could not find or launch GridTracker2. Please check the path.", "Error");
     }
-}
-    sbSizerGridTracker2->Add(m_gt2, 0, wxALL | wxALIGN_CENTER_HORIZONTAL, 5);
-    
-    leftSizer->Add(sbSizerGridTracker2, 0, wxALL|wxEXPAND, 2);
     
     //------------------------------
     // BER Frames box
