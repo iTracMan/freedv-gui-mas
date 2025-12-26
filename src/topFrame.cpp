@@ -516,15 +516,15 @@ TopFrame::TopFrame(wxWindow* parent, wxWindowID id, const wxString& title, const
     //------------------------------
     // QSO logging
     //------------------------------
-    //wxStaticBox* logBox = new wxStaticBox(m_panel, wxID_ANY, _("Logging"), wxDefaultPosition, wxSize(100,-1));
-    //wxStaticBoxSizer* sbSizerLogging = new wxStaticBoxSizer(logBox, wxVERTICAL);
+    wxStaticBox* logBox = new wxStaticBox(m_panel, wxID_ANY, _("Logging"), wxDefaultPosition, wxSize(100,-1));
+    wxStaticBoxSizer* sbSizerLogging = new wxStaticBoxSizer(logBox, wxVERTICAL);
     
-    //m_logQSO = new wxButton(logBox, wxID_ANY, _("Log QSO"), wxDefaultPosition, wxDefaultSize, 0);
-    //m_logQSO->SetToolTip(_("Logs most recent QSO."));
-    //m_logQSO->Disable();
-    //sbSizerLogging->Add(m_logQSO, 0, wxALL | wxALIGN_CENTER_HORIZONTAL, 5);
+    m_logQSO = new wxButton(logBox, wxID_ANY, _("Log QSO"), wxDefaultPosition, wxDefaultSize, 0);
+    m_logQSO->SetToolTip(_("Logs most recent QSO."));
+    m_logQSO->Disable();
+    sbSizerLogging->Add(m_logQSO, 0, wxALL | wxALIGN_CENTER_HORIZONTAL, 5);
     
-    //leftSizer->Add(sbSizerLogging, 0, wxALL|wxEXPAND, 2);
+    leftSizer->Add(sbSizerLogging, 0, wxALL|wxEXPAND, 2);
     
     //------------------------------
     // Run GridTracker2
