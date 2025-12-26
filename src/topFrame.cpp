@@ -534,8 +534,9 @@ TopFrame::TopFrame(wxWindow* parent, wxWindowID id, const wxString& title, const
     wxStaticBoxSizer* sbSizerGridTracker2 = new wxStaticBoxSizer(GT2Box, wxVERTICAL);
     
     m_gt2 = new wxButton(GT2Box, wxID_ANY, _("GridTracker2"), wxDefaultPosition, wxDefaultSize, 0);
-    m_gt2->SetToolTip(_("Start-up GridTracker2 Application"));
-    m_gt2->Bind(wxEVT_BUTTON, &TopFrame::OnLaunchGT2, this) {
+    m_gt2->SetToolTip(_("Start-up GridTracker2 Application"));    
+{
+    m_gt2->Bind(wxEVT_BUTTON, &TopFrame::OnLaunchGT2, this);
 }
     void TopFrame::OnLaunchGT2(wxCommandEvent& event){
     
