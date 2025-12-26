@@ -535,8 +535,8 @@ TopFrame::TopFrame(wxWindow* parent, wxWindowID id, const wxString& title, const
     m_gt2 = new wxButton(GT2Box, wxID_ANY, _("GridTracker2"), wxDefaultPosition, wxDefaultSize, 0);
     m_gt2->SetToolTip(_("Start-up GridTracker2 Application"));
 
-    m_gt2->Bind(wxEVT_BUTTON, &topFrame::OnLaunchGT2, this);
-    void topFrame::OnLaunchGT2(wxCommandEvent& event)
+    m_gt2->Bind(wxEVT_BUTTON, &TopFrame::OnLaunchGT2, this);
+    void TopFrame::OnLaunchGT2(wxCommandEvent& event)
 {
     // Use the full path to the GridTracker2 executable
     // Common paths: "/usr/bin/GridTracker2" or "~/GridTracker/GridTracker"
