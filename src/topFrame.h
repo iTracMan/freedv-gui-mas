@@ -227,7 +227,7 @@ class TopFrame : public wxFrame
         virtual void OnResetMicSpkrLevel(wxMouseEvent& event) { event.Skip(); }
         
         void setVoiceKeyerButtonLabel_(wxString filename);
-        
+        void OnLaunchGT2(wxCommandEvent& event);        
     public:
         wxToggleButton* m_togBtnOnOff;
         wxToggleButton* m_togBtnAnalog;
